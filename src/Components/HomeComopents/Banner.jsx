@@ -1,17 +1,15 @@
 import { FaReact, FaNodeJs, FaLaptopCode, FaGithub } from "react-icons/fa";
 import { Slide, Fade } from "react-awesome-reveal";
 import Hyperspeed from "../../OtherComponents/Hyperspeed";
+import ClientLogosSection from "./ClientLogosSection";
 
 const Banner = () => {
     return (
-        <section className="relative min-h-screen bg-black text-white overflow-hidden">
-
-            {/* Hyperspeed Background */}
+        <section className="relative bg-black text-white overflow-hidden min-h-screen">
+            {/* Hyperspeed Animated Background */}
             <div className="absolute inset-0 z-0">
                 <Hyperspeed
                     effectOptions={{
-                        onSpeedUp: () => { },
-                        onSlowDown: () => { },
                         distortion: "turbulentDistortion",
                         length: 400,
                         roadWidth: 10,
@@ -49,47 +47,51 @@ const Banner = () => {
                 />
             </div>
 
-            {/* Black translucent overlay */}
-            <div className="absolute inset-0 bg-black/50 z-10 "></div>
+            {/* Black Overlay */}
+            <div className="absolute inset-0 bg-black/60 z-10" />
 
-            {/* Foreground Content */}
-            <div className="relative z-20 flex items-center justify-center min-h-screen px-4">
-                <div className="text-center max-w-2xl">
-                    <Slide direction="down" triggerOnce>
-                        <h1 className="text-4xl md:text-5xl font-extrabold text-teal-400 mb-4 drop-shadow-lg">
-                            Welcome to K-WEB TEc
-                        </h1>
-                    </Slide>
+            {/* Hero Content */}
+            <div className="relative z-20 flex flex-col justify-center items-center text-center  min-h-screen gap-y-6  mx-auto">
+                <Slide direction="down" triggerOnce>
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-teal-400 drop-shadow-xl mt-10">
+                        Welcome to K-WEB TEc
+                    </h1>
+                </Slide>
 
-                    <Fade cascade damping={0.1} triggerOnce>
-                        <p className="text-lg md:text-xl text-gray-300 mb-6 drop-shadow-sm">
-                            Crafting blazing fast and beautifully responsive web apps using
-                            modern technologies. Specializing in React.js, Node.js, and the
-                            entire MERN stack.
-                        </p>
+                <Fade cascade damping={0.1} triggerOnce>
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto px-10">
+                        Crafting blazing fast, interactive, and responsive web apps with the modern MERN Stack.
+                        We specialize in building real-world full-stack solutions with speed and style.
+                    </p>
 
-                        <div className="flex justify-center gap-6 text-3xl text-teal-400 mb-6">
-                            <FaReact title="React.js" />
-                            <FaNodeJs title="Node.js" />
-                            <FaLaptopCode title="Full Stack" />
-                            <FaGithub title="GitHub" />
-                        </div>
+                    {/* Icons */}
+                    <div className="flex justify-center gap-6 text-2xl text-teal-400">
+                        <FaReact title="React.js" />
+                        <FaNodeJs title="Node.js" />
+                        <FaLaptopCode title="Full Stack" />
+                        <FaGithub title="GitHub" />
+                    </div>
 
-                        <div className="flex justify-center gap-4">
-                            <a
-                                href="#projects"
-                                className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full shadow-md transition duration-300"
-                            >
-                                View Projects
-                            </a>
-                            <a
-                                href="#contact"
-                                className="border border-teal-500 text-teal-400 hover:bg-teal-500 hover:text-white px-6 py-2 rounded-full shadow-md transition duration-300"
-                            >
-                                Contact Me
-                            </a>
-                        </div>
-                    </Fade>
+                    {/* Buttons */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <a
+                            href="#projects"
+                            className="bg-teal-500 hover:bg-teal-600 text-white px-5 py-2 rounded-full font-semibold transition duration-300 shadow-lg hover:scale-105 border border-teal-400"
+                        >
+                            View Projects
+                        </a>
+                        <a
+                            href="#contact"
+                            className="text-teal-400 hover:bg-teal-600 hover:text-white border border-teal-500 px-5 py-2 rounded-full font-semibold transition duration-300 shadow-lg hover:scale-105"
+                        >
+                            Contact Me
+                        </a>
+                    </div>
+                </Fade>
+
+                {/* Client Logos inside Hero */}
+                <div className="w-full mt-4 lg:mt-20 bg-white/10 backdrop-blur-sm  py-3 overflow-hidden h-fit">
+                    <ClientLogosSection />
                 </div>
             </div>
         </section>
