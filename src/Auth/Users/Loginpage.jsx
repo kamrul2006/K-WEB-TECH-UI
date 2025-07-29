@@ -91,7 +91,7 @@ const LoginPage = () => {
                     <form className="space-y-5" onSubmit={handleSubmit}>
                         {/* Email */}
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
+                            <label htmlFor="email" className="block text-sm font-medium text-black mb-1">
                                 Email
                             </label>
                             <input
@@ -106,7 +106,7 @@ const LoginPage = () => {
 
                         {/* Password */}
                         <div className="relative">
-                            <label htmlFor="password" className="block text-sm font-medium text-white mb-1">
+                            <label htmlFor="password" className="block text-sm font-medium text-black mb-1">
                                 Password
                             </label>
                             <input
@@ -146,11 +146,11 @@ const LoginPage = () => {
                     </form>
 
                     {/* Register Link */}
-                    <p className="mt-4 text-center text-sm text-white/80">
+                    <p className="mt-4 text-center text-sm text-black">
                         New here?{" "}
                         <Link
                             to="/register"
-                            className="text-teal-300 hover:underline hover:font-bold transition"
+                            className="text-teal-700 hover:underline hover:font-bold transition"
                         >
                             Create a New Account
                         </Link>

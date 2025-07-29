@@ -1,12 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { FaEye, FaEyeSlash, FaFacebook, FaGithub, FaGoogle, FaHome } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle, FaHome } from "react-icons/fa";
 import { sendEmailVerification } from "firebase/auth";
 import { AuthContext } from "../Providers/AuthProvider";
-
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 
-
+import bg from "/Backgrounds/signlogin.jpg";
+import ill from "/Backgrounds/signIllustration.svg";
 
 const SignupPage = () => {
     const axiosPublic = UseAxiosPublic();
@@ -25,195 +25,143 @@ const SignupPage = () => {
         const Email = e.target.email.value;
         const Password = e.target.password.value;
         const Name = e.target.name.value;
+        const Photo = e.target.photo.value;
         const Terms = e.target.terms.checked;
-        const Photo = e.target.photo.value
 
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
-        if (!Terms) {
-            setError("Please accept all terms and conditions.");
-            return;
-        } else if (Password.length < 6) {
-            setError("Password should be at least 6 characters long.");
-            return;
-        } else if (!passwordRegex.test(Password)) {
-            setError("Password should contain a-z, A-Z, 0-9, and a special character.");
-            return;
-        }
+        if (!Terms) return setError("Please accept terms and conditions.");
+        if (Password.length < 6) return setError("Password must be at least 6 characters.");
+        if (!passwordRegex.test(Password)) return setError("Password must include lowercase, uppercase, number, and special character.");
 
         CreateUserByMailPass(Email, Password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 setUser(user);
 
-                const UserInfo = {
+                axiosPublic.post("/Users", {
                     name: Name,
                     email: Email,
                     role: "user",
                     isSubscribed: false
-                };
-
-                axiosPublic.post("/Users", UserInfo).then((res) => {
-                    if (res.data.insertedId) {
-                        setSuccess("Sign Up Successful.");
-                    }
+                }).then((res) => {
+                    if (res.data.insertedId) setSuccess("Account created successfully.");
                 });
 
-                updatedProfile({ displayName: Name, photoURL: Photo })
-                    .then(() => {
-                        e.target.reset();
-                        navigate("/");
-                    })
-                    .catch((err) => setError(err.message));
-
-                sendEmailVerification(auth.currentUser).then(() => { });
-            });
+                updatedProfile({ displayName: Name, photoURL: Photo }).then(() => {
+                    sendEmailVerification(user).then(() => { });
+                    e.target.reset();
+                    navigate("/");
+                }).catch(err => setError(err.message));
+            })
+            .catch(err => setError(err.message));
     };
 
     const HandleGoogleLogin = () => {
         GoogleLogin()
             .then((res) => {
-                setUser(res.user);
+                const user = res.user;
+                setUser(user);
 
-                const UserInfo = {
-                    name: res.user.displayName,
-                    email: res.user.email,
+                axiosPublic.post("/Users", {
+                    name: user.displayName,
+                    email: user.email,
                     role: "user",
                     isSubscribed: false
-                };
+                });
 
-                axiosPublic.post("/users", UserInfo).then(() => { });
-                setSuccess("Sign Up Successful.");
+                setSuccess("Google Sign Up successful.");
                 navigate("/");
             })
-            .catch((err) => {
-                console.log(err);
+            .catch(() => {
+                setError("Google Sign Up failed.");
                 setUser(null);
             });
     };
 
-    const ShowPassWord = (e) => {
-        e.preventDefault();
-        setShow(!show);
-    };
-
     return (
-        <div
-            className="  flex items-center justify-center min-h-screen py-10 bg-cover md:bg-center"
-            style={{ background: `url(${bg})`, backgroundSize: "cover" }}
-        >
-            <div className="backdrop-blur shadow-xl rounded-lg flex flex-col text-white md:flex-row-reverse w-full max-w-4xl overflow-hidden">
-                {/* Left Side */}
-                <div className="w-full md:w-1/2 flex items-center justify-center flex-col p-3">
-                    <img src={ill} alt="K-InfoNic" className="max-w-full h-auto object-contain md:w-44 w-20" />
-                    <Link to={'/'} className="btn btn-sm bg-green-500 mt-2 md:mt-5">
-                        <FaHome className="mr-2" />
-                        Back to Home</Link>
+        <div className="min-h-screen flex items-center justify-center py-10 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }}>
+            <div className="bg-white/10 backdrop-blur-xl text-white rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden flex flex-col md:flex-row">
+
+                {/* Illustration Section */}
+                <div className="md:w-1/2 flex flex-col items-center justify-center gap-4 p-6 backdrop-blur-lg bg-white/40">
+
+                    <img src={ill} alt="Sign Up" className="w-40 md:w-48 drop-shadow-xl" />
+
+                    <Link to="/" className="mt-3 px-4 py-2 bg-white text-teal-700 rounded-full font-semibold hover:bg-teal-200 transition duration-300 flex items-center gap-2">
+                        <FaHome /> Back to Home
+                    </Link>
                 </div>
 
-                {/* Right Side */}
-                <div className="w-full md:w-1/2 p-6 md:p-12">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Sign Up</h2>
-                    <form onSubmit={HandleSignUp} className="space-y-2">
+                {/* Form Section */}
+                <div className="md:w-1/2 p-8 bg-white/10 rounded-lg text-white">
+                    <h2 className="text-3xl font-bold text-center mb-6 text-teal-300">Join K-Web-Tech</h2>
 
+                    <form onSubmit={HandleSignUp} className="space-y-5">
+                        {/* Name */}
                         <div>
-                            <label htmlFor="name" className="text-sm font-medium">
-                                Full Name:
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-green-400 focus:border-green-400"
-                                placeholder="First name + Last name"
-                                required
-                            />
+                            <label className="text-sm font-semibold mb-1 block">Full Name</label>
+                            <input name="name" type="text" placeholder="Your full name" required className="w-full px-4 py-2 rounded-md bg-white text-black focus:outline-none focus:ring-2 focus:ring-teal-400 shadow-sm" />
                         </div>
 
+                        {/* Photo */}
                         <div>
-                            <label htmlFor="name" className="text-sm font-medium">
-                                Photo Url:
-                            </label>
-                            <input
-                                type="text"
-                                id="photo"
-                                name="photo"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-green-400 focus:border-green-400"
-                                placeholder="Photo URL Link"
-                                required
-                            />
+                            <label className="text-sm font-semibold mb-1 block">Photo URL</label>
+                            <input name="photo" type="text" placeholder="Link to profile photo" required className="w-full px-4 py-2 rounded-md bg-white text-black focus:outline-none focus:ring-2 focus:ring-teal-400 shadow-sm" />
                         </div>
 
+                        {/* Email */}
                         <div>
-                            <label htmlFor="email" className="text-sm font-medium">
-                                Email Address:
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-green-400 focus:border-green-400"
-                                placeholder="Email"
-                                required
-                            />
+                            <label className="text-sm font-semibold mb-1 block">Email</label>
+                            <input name="email" type="email" placeholder="Your email" required className="w-full px-4 py-2 rounded-md bg-white text-black focus:outline-none focus:ring-2 focus:ring-teal-400 shadow-sm" />
                         </div>
 
+                        {/* Password */}
                         <div className="relative">
-                            <label htmlFor="password" className="text-sm font-medium">
-                                Password:
-                            </label>
+                            <label className="text-sm font-semibold mb-1 block">Password</label>
                             <input
-                                type={show ? "text" : "password"}
-                                id="password"
                                 name="password"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-green-400 focus:border-green-400"
+                                type={show ? "text" : "password"}
                                 placeholder="Password"
                                 required
+                                className="w-full px-4 py-2 rounded-md bg-white text-black focus:outline-none focus:ring-2 focus:ring-teal-400 shadow-sm"
                             />
-                            <button
-                                onClick={ShowPassWord}
-                                className="absolute right-3 top-9 text-lg text-gray-600"
-                            >
+                            <button onClick={(e) => { e.preventDefault(); setShow(!show); }} className="absolute top-10 right-4 text-gray-500 hover:text-teal-400 transition">
                                 {show ? <FaEyeSlash /> : <FaEye />}
                             </button>
                         </div>
 
+                        {/* Terms */}
                         <div className="flex items-center gap-2">
-                            <input type="checkbox" name="terms" className="checkbox checkbox-success" />
-                            <label className="text-sm text-green-500 cursor-pointer">
-                                Accept all terms and conditions
-                            </label>
+                            <input type="checkbox" name="terms" className="w-4 h-4 accent-teal-400" />
+                            <span className="text-sm">I agree to the terms and conditions.</span>
                         </div>
 
-                        {error && <p className="text-sm text-red-500 text-center">{error}</p>}
-                        {success && <p className="text-sm text-green-500 text-center">{success}</p>}
+                        {/* Error/Success */}
+                        {error && <p className="text-red-400 text-sm text-center">{error}</p>}
+                        {success && <p className="text-green-400 text-sm text-center">{success}</p>}
 
-                        <button
-                            type="submit"
-                            className="w-full py-2 bg-green-400 hover:bg-green-500 text-white font-medium rounded-md"
-                        >
+                        {/* Submit */}
+                        <button type="submit" className="w-full py-2 rounded-md bg-teal-500 hover:bg-teal-600 font-semibold text-white transition duration-300">
                             Sign Up
                         </button>
                     </form>
 
-                    <div className="mt-4 text-center">
-                        <p className="text-sm text-gray-600">Or sign up with</p>
-                        <div className="flex justify-center gap-4 mt-2">
-                            <button
-                                onClick={HandleGoogleLogin}
-                                className="w-full btn bg-green-500 btn-sm text-black"
-                            >
-                                <FaGoogle className="mr-2" />
-                                Sign in with Google
-                            </button>
-                        </div>
+                    {/* Google Login */}
+                    <div className="mt-6 text-center">
+                        <p className="text-sm text-gray-300">Or sign up with</p>
+                        <button
+                            onClick={HandleGoogleLogin}
+                            className="mt-2 w-full flex justify-center items-center gap-2 px-4 py-2 bg-white text-teal-700 rounded-md hover:bg-gray-200 transition duration-300"
+                        >
+                            <FaGoogle /> Google
+                        </button>
                     </div>
 
-                    <p className="text-center mt-4">
+                    {/* Login Link */}
+                    <p className="text-center mt-6 text-sm text-gray-200">
                         Already have an account?{" "}
-                        <Link to="/logIn" className="text-green-500 hover:underline">
-                            Log in
-                        </Link>
+                        <Link to="/login" className="text-teal-300 hover:underline">Log in</Link>
                     </p>
                 </div>
             </div>

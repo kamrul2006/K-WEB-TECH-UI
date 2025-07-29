@@ -8,6 +8,7 @@ import NotFound from "./Components/FixedComponents/NotFound";
 import ContactPageLayouts from "./Layouts/ContactPageLayouts";
 import LoginPage from "./Auth/Users/Loginpage";
 import AuthProvider from "./Auth/Providers/AuthProvider";
+import SignupPage from "./Auth/Users/SignupPage";
 
 
 const root = document.getElementById("root");
@@ -18,6 +19,7 @@ ReactDOM.createRoot(root).render(
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<SignupPage />} />
 
 
         <Route element={<MainLayOuts />}>
