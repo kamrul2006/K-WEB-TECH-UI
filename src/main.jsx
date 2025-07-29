@@ -6,26 +6,30 @@ import HomePageLayOuts from "./Layouts/HomePageLayOuts";
 import MainLayOuts from "./Layouts/MainLayOuts";
 import NotFound from "./Components/FixedComponents/NotFound";
 import ContactPageLayouts from "./Layouts/ContactPageLayouts";
+import LoginPage from "./Auth/Users/Loginpage";
+import AuthProvider from "./Auth/Providers/AuthProvider";
 
 
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
-    <Routes>
-      <Route path="*" element={<NotFound />} />
+    <AuthProvider>
+      <Routes>
+        <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<LoginPage />} />
 
 
-      <Route element={<MainLayOuts />}>
+        <Route element={<MainLayOuts />}>
 
-        <Route path="/" element={<HomePageLayOuts />} />
+          <Route path="/" element={<HomePageLayOuts />} />
 
-        <Route path="/about" element={<AboutPageLayOuts />} />
+          <Route path="/about" element={<AboutPageLayOuts />} />
 
-        <Route path="/contact" element={<ContactPageLayouts />} />
+          <Route path="/contact" element={<ContactPageLayouts />} />
 
-      </Route>
-    </Routes>
-
+        </Route>
+      </Routes>
+    </AuthProvider>
   </BrowserRouter>,
 );

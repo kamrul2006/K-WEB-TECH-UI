@@ -1,194 +1,171 @@
-import React, { useContext, useEffect, useState } from "react";
-import { FaGoogle, FaFacebook, FaGithub, FaEyeSlash, FaEye, FaHome } from "react-icons/fa";
-
+import React, { useContext, useState } from "react";
+import { FaGoogle, FaEyeSlash, FaEye, FaHome } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 import { AuthContext } from "../Providers/AuthProvider";
 
+import bg from "/Backgrounds/bglogin.jpg";
+import ill from "/Backgrounds/loginIllustration.svg";
+
 const LoginPage = () => {
-    const axiosPublic = UseAxiosPublic()
+    const axiosPublic = UseAxiosPublic();
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
+    const [show, setShow] = useState(false);
 
-    const [error, setError] = useState(null)
-    const [success, setSuccess] = useState(null)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const { LoginUser, setUser, GoogleLogin } = useContext(AuthContext);
 
-    const [show, setShow] = useState(false)
-    const ShowPassWord = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setShow(!show)
-    }
+        setError(null);
+        setSuccess(null);
 
-
-    const navigate = useNavigate()
-    const location = useLocation()
-
-    //---------- Context use----------------------
-
-    const { LoginUser, setUser, GoogleLogin } = useContext(AuthContext)
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setError(null)
-        setSuccess(null)
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-
-        //-------------------------login with email and password--------------------
         LoginUser(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                setUser(user)
-                setSuccess('LOGIN Successful.')
-                navigate(location.state ? location.state : '/')
+                setUser(user);
+                setSuccess("✅ Login successful!");
+                navigate(location.state ? location.state : "/");
             })
-            .catch((error) => {
-                // console.log(error)
-                // navigate(location.state ? location.state : '/')
-                if (error) { setError('Password or Email is invalid..!') }
+            .catch(() => {
+                setError("❌ Email or password is invalid.");
             });
-    }
+    };
 
-    //------------------- HAndle google--------------
-    const HandleGoogleLogin = () => {
+    const handleGoogleLogin = () => {
         GoogleLogin()
             .then((res) => {
-                // console.log(res.user)
-                setUser(res.user)
+                setUser(res.user);
 
-                const UserInfo = {
+                const userInfo = {
                     name: res.user.displayName,
                     email: res.user.email,
                     role: "user",
-                    isSubscribed: false
+                    isSubscribed: false,
                 };
 
-                setSuccess('LOGIN Successful.')
-                navigate(location.state ? location.state : '/')
-
-                axiosPublic.post('/users', UserInfo)
-                    .then(res => {
-                        // console.log(res)
-                        if (res.data.insertedId) {
-                        }
-                    })
+                axiosPublic.post("/users", userInfo);
+                setSuccess("✅ Login successful!");
+                navigate(location.state ? location.state : "/");
             })
-            .catch(err => {
-
-                setUser(null)
-            })
-    }
-
+            .catch(() => {
+                setUser(null);
+                setError("❌ Google login failed.");
+            });
+    };
 
     return (
         <div
-            className="flex items-center justify-center min-h-screen py-10 bg-cover md:bg-center"
-            style={{ background: `url(${bg})`, backgroundSize: "cover" }}
+            className="flex items-center justify-center min-h-screen py-10 bg-cover bg-center"
+            style={{ backgroundImage: `url(${bg})` }}
         >
+            <div className="shadow-2xl border backdrop-blur border-gray-300 text-white rounded-xl flex flex-col lg:flex-row w-11/12 max-w-5xl overflow-hidden bg-black/50 ">
 
-            <div className=" shadow-xl border backdrop-blur-lg text-white border-gray-400 rounded-lg flex flex-col lg:flex-row w-11/12 max-w-4xl overflow-hidden">
-
-                {/*----------------------- Left Side ------------------------*/}
-                <div className="w-full md:w-1/2 flex items-center justify-center flex-col p-3">
-
-                    <img src={ill} alt="K-InfoNic" className="max-w-full h-auto object-contain md:w-40 w-20 " />
-
-                    <Link to={'/'} className="btn btn-sm bg-green-500 mt-2 md:mt-5">
-                        <FaHome className="mr-2" />
-                        Back to Home</Link>
+                {/* Left Side */}
+                <div className="w-full md:w-1/2 flex items-center justify-center flex-col p-8">
+                    <img
+                        src={ill}
+                        alt="Login Illustration"
+                        className="md:w-72 w-48 mb-6 drop-shadow-lg"
+                    />
+                    <Link
+                        to="/"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-white font-semibold rounded-md shadow-md hover:bg-teal-600 transition duration-300 transform hover:scale-105"
+                    >
+                        <FaHome />
+                        Back to Home
+                    </Link>
                 </div>
 
-
-
-                {/*---------------------- Right Side-------------------- */}
-                <div className="lg:w-1/2 w-full p-8">
-
-                    <h2 className="text-2xl font-bold text-black rounded-full md:rounded-t-4xl py-2 lg:w-30 mx-auto  text-center bg-white mb-6 ">
-                        Login
+                {/* Right Side - Login Form */}
+                <div className="lg:w-1/2 w-full p-8 bg-white bg-opacity-10 rounded-lg text-white">
+                    <h2 className="text-3xl font-bold text-center bg-white text-black rounded-full py-2 px-8 w-fit mx-auto mb-6 shadow">
+                        Sign In
                     </h2>
 
-
-                    <form className="space-y-4" onSubmit={handleSubmit}>
-
-                        {/* ------------------------Email Field ---------------------*/}
+                    <form className="space-y-5" onSubmit={handleSubmit}>
+                        {/* Email */}
                         <div>
-                            <label
-                                htmlFor="email"
-                                className="block text-sm font-medium"
-                            >
+                            <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
                                 Email
                             </label>
                             <input
                                 type="email"
                                 id="email"
-                                className="mt-1 block w-full px-3 py-2 border rounded-md shadow-sm  focus:border-green-400 peer"
-                                placeholder="Type here"
+                                name="email"
+                                className="w-full px-4 py-2 rounded-md bg-white text-black border border-gray-300 focus:border-teal-400 shadow-sm focus:outline-none"
+                                placeholder="Enter your email"
                                 required
                             />
                         </div>
 
-                        {/* --------------------Password Field------------------- */}
+                        {/* Password */}
                         <div className="relative">
-                            <label className="my-1 text-sm font-semibold">Password</label>
+                            <label htmlFor="password" className="block text-sm font-medium text-white mb-1">
+                                Password
+                            </label>
                             <input
                                 type={show ? "text" : "password"}
                                 id="password"
                                 name="password"
-                                className="w-full px-4 py-2 text-white border border-gray-300 rounded-lg focus:outline-none focus:border-green-400 peer"
-                                placeholder="Enter Password."
+                                className="w-full px-4 py-2 rounded-md bg-white text-black border border-gray-300 focus:border-teal-400 shadow-sm focus:outline-none"
+                                placeholder="Enter your password"
                                 required
                             />
                             <button
-                                onClick={ShowPassWord}
-                                className="mt-1 hover:text-green-400 btn-xs absolute right-3 top-8 text-lg text-white"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setShow(!show);
+                                }}
+                                className="absolute right-3 top-9 text-lg text-gray-600 hover:text-teal-400"
                             >
                                 {show ? <FaEyeSlash /> : <FaEye />}
                             </button>
                         </div>
 
-                        {/* Error/Success Messages */}
+                        {/* Error/Success Message */}
                         {error && (
-                            <p className="text-xs font-semibold text-green-500 text-center">
-                                {error}
-                            </p>
+                            <p className="text-red-400 text-sm font-medium text-center">{error}</p>
                         )}
                         {success && (
-                            <p className="text-xs font-semibold text-green-500 text-center">
-                                {success}
-                            </p>
+                            <p className="text-green-400 text-sm font-medium text-center">{success}</p>
                         )}
 
-                        {/* Submit Button */}
+                        {/* Submit */}
                         <button
                             type="submit"
-                            className="w-full py-2 bg-green-400 hover:bg-green-500 text-black font-medium rounded-md"
+                            className="w-full py-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-md shadow-md transition duration-300 transform hover:scale-105"
                         >
-                            Sign in
+                            Sign In
                         </button>
                     </form>
 
-                    {/* Registration Link */}
-                    <p className="mt-4 text-center text-sm text-gray-300">
+                    {/* Register Link */}
+                    <p className="mt-4 text-center text-sm text-white/80">
                         New here?{" "}
                         <Link
                             to="/register"
-                            className="text-green-500 hover:underline hover:font-bold"
+                            className="text-teal-300 hover:underline hover:font-bold transition"
                         >
                             Create a New Account
                         </Link>
                     </p>
 
-                    {/* Social Sign-in */}
-                    <div className="mt-4 text-center">
-                        <p className="text-sm text-gray-300">Or sign in with</p>
-                        <div className="flex justify-center space-x-4 mt-2">
-                            <button
-                                onClick={HandleGoogleLogin}
-                                className="w-full btn  btn-sm text-green-900"
-                            >
-                                <FaGoogle className="mr-2" />
-                                Sign in with Google
-                            </button>
-                        </div>
+                    {/* Google Sign-in */}
+                    <div className="mt-6 text-center">
+                        <p className="text-sm text-white/80 mb-2">Or sign in with</p>
+                        <button
+                            onClick={handleGoogleLogin}
+                            className="w-full flex items-center justify-center gap-2 py-2 bg-white text-teal-700 font-medium rounded-md shadow-xl shadow-black/50 hover:shadow-lg transition duration-300 hover:bg-gray-100 transform hover:scale-105 border-b-4 border"
+                        >
+                            <FaGoogle />
+                            Sign in with Google
+                        </button>
                     </div>
                 </div>
             </div>
