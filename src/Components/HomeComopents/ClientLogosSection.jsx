@@ -9,6 +9,7 @@ const clientLogos = [
     "/logos/client5.png",
     "/logos/client6.png",
     "/logos/client7.png",
+    "/logos/ktech.png",
 ];
 
 const ClientLogosSection = () => {
