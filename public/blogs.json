@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "title": "Mastering Responsive Design: A Developer’s Journey",
+        "description": "Responsive design ensures your website looks and functions well on all devices. In this guide, we’ll take you through the principles, techniques, and tools used in modern responsive web development.\n\n### Introduction\nResponsive design is the cornerstone of modern web development. With users accessing websites on everything from desktops to smartphones, it's essential to ensure your site adapts fluidly.\n\n### Why It Matters\nOver 50% of global traffic now comes from mobile devices. Poor mobile experience leads to higher bounce rates.\n\n### Techniques\n- Use flexible grids\n- Apply media queries\n- Test on real devices and emulators\n\n### Tools\n- Chrome DevTools\n- Responsively App\n- Tailwind CSS\n\n### Conclusion\nBuilding with responsiveness in mind boosts SEO, user satisfaction, and conversion rates.",
+        "image": "https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/4086974/cover_image/retina_1708x683/Responsive_Design-1200x628-d17a83894155f25ea004cce27ccd4ad1.png",
+        "category": "Design",
+        "date": "2025-07-21",
+        "time": "10:00",
+        "likes": 86
+    },
+    {
+        "id": 2,
+        "title": "Getting Started with MongoDB: A NoSQL Primer",
+        "description": "MongoDB is a popular NoSQL database that provides flexibility, scalability, and performance. This blog walks you through the basics, installation, data modeling, and CRUD operations.\n\n### Why NoSQL?\nTraditional SQL databases require rigid schemas. MongoDB uses dynamic schemas allowing agility.\n\n### CRUD Operations\n- **Create:** `db.collection.insertOne()`\n- **Read:** `db.collection.find()`\n- **Update:** `db.collection.updateOne()`\n- **Delete:** `db.collection.deleteOne()`\n\n### Conclusion\nMongoDB is ideal for projects with evolving data structures or large-scale unstructured data.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT441wckYMCcg3hiRxgjkVei7OJ-8Nd7eCnaA&s",
+        "category": "Development",
+        "date": "2025-07-22",
+        "time": "14:45",
+        "likes": 140
+    },
+    {
+        "id": 3,
+        "title": "How to Build a Design System with Tailwind CSS",
+        "description": "A design system is more than just colors and fonts—it’s a reusable component library. Tailwind CSS makes it easy to standardize styling across projects.\n\n### Topics Covered:\n- Atomic design principles\n- Using Tailwind plugins\n- Reusable UI components\n\n### Benefits:\nConsistency, scalability, and faster development.\n\n### Bonus:\nTailwind UI kit recommendations.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV__6IjkuR0y-h81FxVcg7JQPGKCoXa2igxQ&s",
+        "category": "Design",
+        "date": "2025-07-23",
+        "time": "11:00",
+        "likes": 97
+    },
+    {
+        "id": 4,
+        "title": "Understanding React Hooks Deeply",
+        "description": "Hooks changed the way we write React. But many devs still use them incorrectly. Let's explore useState, useEffect, and custom hooks with real-world scenarios.\n\n### Examples:\n- useEffect cleanup pitfalls\n- Optimizing with useMemo\n- Creating useFetch hook\n\n### Conclusion:\nUse hooks properly to keep your components clean and reusable.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkXrCLmjhU5X5-_HSEmU0aAiJDlX5iLsP4CA&s",
+        "category": "Development",
+        "date": "2025-07-24",
+        "time": "09:30",
+        "likes": 122
+    },
+    {
+        "id": 5,
+        "title": "Performance Tips for JavaScript Developers",
+        "description": "Modern web apps are powerful—but bloated. Here’s how to squeeze better performance out of your JS apps without losing functionality.\n\n### Tips:\n- Use lazy loading\n- Minify and bundle wisely\n- Avoid memory leaks\n\n### Bonus:\nTools like Lighthouse, WebPageTest, and React Profiler.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVXd3apSxirExVMt212AanhVu5xDJTKu6mUQ&s",
+        "category": "Performance",
+        "date": "2025-07-24",
+        "time": "15:30",
+        "likes": 76
+    },
+    {
+        "id": 6,
+        "title": "Deploying Your React App with Vite",
+        "description": "Vite is blazing fast, but deployment requires proper configuration. Learn how to build and deploy your Vite-based React app to platforms like Netlify and Vercel.",
+        "image": "https://vitejs.dev/logo-with-shadow.png",
+        "category": "Development",
+        "date": "2025-07-25",
+        "time": "10:00",
+        "likes": 101
+    },
+    {
+        "id": 7,
+        "title": "How Dark Mode Became a UX Expectation",
+        "description": "Dark mode isn't just a trend. Learn the psychology, accessibility, and implementation strategies that make it a crucial feature today.",
+        "image": "https://miro.medium.com/v2/resize:fit:1024/0*9asQ-L4vOhEXvLlc.jpg",
+        "category": "Design",
+        "date": "2025-07-25",
+        "time": "17:00",
+        "likes": 89
+    },
+    {
+        "id": 8,
+        "title": "JavaScript Event Loop Explained Visually",
+        "description": "Ever wondered how JS handles async tasks like setTimeout, promises, and fetch? Understand the event loop, call stack, and task queue like never before.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8tWPKQ-eKK9xW597ezsHmQ__DR6aeVKpuXA&s",
+        "category": "Performance",
+        "date": "2025-07-26",
+        "time": "13:00",
+        "likes": 134
+    },
+    {
+        "id": 9,
+        "title": "Top 5 Free APIs Every Dev Should Know",
+        "description": "APIs supercharge your apps. Here are 5 free and fun APIs you can use for data, images, quotes, and more. Bonus: all are beginner-friendly.",
+        "image": "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fbwi4lhizyjafxrhljxjs.png",
+        "category": "Development",
+        "date": "2025-07-27",
+        "time": "08:00",
+        "likes": 95
+    },
+    {
+        "id": 10,
+        "title": "Building Animation into Your UI Without Killing Performance",
+        "description": "Animations make your UI feel alive. But too much of it? You’ll crash performance. Here’s how to strike the right balance.",
+        "image": "https://bs-uploads.toptal.io/blackfish-uploads/components/open_graph_image/10211999/og_image/optimized/REDESIGN-GuideUIAnimation-Luke_Social-50bcbdb02c510c975e5ffffa1bb214f6.png",
+        "category": "Performance",
+        "date": "2025-07-27",
+        "time": "16:30",
+        "likes": 88
+    },
+    {
+        "id": 11,
+        "title": "The Power of Accessibility: Designing for Everyone",
+        "description": "Accessibility isn’t optional. It’s a responsibility. Learn how to build inclusive experiences with real WCAG examples and tools like Lighthouse and axe DevTools.",
+        "image": "https://cdn.prod.website-files.com/5e9dc792e1210c5325f7ebbc/64ff4a9bd1d619b6daf10aa6_blog%20accessibility.webp",
+        "category": "Design",
+        "date": "2025-07-28",
+        "time": "12:00",
+        "likes": 110
+    },
+    {
+        "id": 12,
+        "title": "Next.js vs Vite: A Developer’s Perspective",
+        "description": "Two modern tools. Two different philosophies. Compare build speed, SSR support, routing, and dev experience between Next.js and Vite.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmNtG2qLeoYoIo4JCeobhK72frl7Ix5f-sIg&s",
+        "category": "Development",
+        "date": "2025-07-28",
+        "time": "19:00",
+        "likes": 143
+    }
+]

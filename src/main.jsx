@@ -9,6 +9,8 @@ import ContactPageLayouts from "./Layouts/ContactPageLayouts";
 import LoginPage from "./Auth/Users/Loginpage";
 import AuthProvider from "./Auth/Providers/AuthProvider";
 import SignupPage from "./Auth/Users/SignupPage";
+import BlogPageLayouts from "./Layouts/BlogPageLayouts";
+import BlogDetails from "./Components/BlogPageComponents/BlogDetails";
 
 
 const root = document.getElementById("root");
@@ -30,8 +32,13 @@ ReactDOM.createRoot(root).render(
 
           <Route path="/contact" element={<ContactPageLayouts />} />
 
+          <Route path="/blogs" element={<BlogPageLayouts />} />
+
+          <Route path="/blogs/:id" element={<BlogDetails />} />
+
         </Route>
       </Routes>
+
     </AuthProvider>
   </BrowserRouter>,
 );
