@@ -7,7 +7,7 @@ const MissionVision = () => {
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
 
                 {/* Mission Card */}
-                <Fade direction="left" triggerOnce>
+                <Fade direction="left"  >
                     <div className="flex flex-col justify-between h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-white/10 rounded-2xl p-8 shadow-md hover:shadow-teal-500/20 hover:-translate-y-1 transition-all duration-300">
                         <div>
                             <div className="flex items-center gap-3 mb-4">
@@ -23,7 +23,7 @@ const MissionVision = () => {
                 </Fade>
 
                 {/* Vision Card */}
-                <Fade direction="right" triggerOnce>
+                <Fade direction="right"  >
                     <div className="flex flex-col justify-between h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border border-white/10 rounded-2xl p-8 shadow-md hover:shadow-cyan-500/20 hover:-translate-y-1 transition-all duration-300">
                         <div>
                             <div className="flex items-center gap-3 mb-4">

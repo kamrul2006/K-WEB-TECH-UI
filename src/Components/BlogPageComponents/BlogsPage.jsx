@@ -25,7 +25,7 @@ const BlogsPage = () => {
     return (
         <section className="bg-gray-950 min-h-screen py-16 px-6 text-white">
             <div className="max-w-6xl mx-auto">
-                <Fade triggerOnce>
+                <Fade  >
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                             Explore Our Blog
@@ -67,7 +67,7 @@ const BlogsPage = () => {
                 {/* Blog Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                     {filteredBlogs.map((blog, index) => (
-                        <Fade key={blog.id} triggerOnce cascade delay={index * 50}>
+                        <Fade key={blog.id} cascade delay={index * 50}>
                             <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/40 border border-white/10 rounded-2xl overflow-hidden shadow-md hover:shadow-cyan-500/30 group transition-all duration-300 hover:scale-[1.02]">
                                 <div className="relative h-48 overflow-hidden">
                                     <img

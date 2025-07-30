@@ -1,4 +1,3 @@
-import { Fade } from "react-awesome-reveal";
 import Marquee from "react-fast-marquee";
 
 const clientLogos = [
@@ -14,23 +13,23 @@ const clientLogos = [
 
 const ClientLogosSection = () => {
     return (
-        <section className="w-full h-fit overflow-hidden">
-            <div className="mx-auto rounded-xl overflow-hidden">
+        <section className="w-full h-fit overflow-hidden py-2">
+            <div className="mx-auto rounded-xl overflow-hidden h-fit overflow-x-hidden">
                 {/* Logo Marquee */}
                 <Marquee
                     pauseOnHover
                     speed={40}
-                    className="flex items-center"
+                    className="overflow-hidden"
                 >
                     {clientLogos.map((logo, index) => (
                         <div
                             key={index}
-                            className="mx-8 flex items-center justify-center min-w-[120px]   h-fit  filter grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:scale-110 hover:drop-shadow-lg cursor-pointer overflow-hidden"
+                            className="mx-4 flex items-center justify-center  filter grayscale hover:grayscale-0 transition-all duration-300 ease-in-out hover:scale-110 hover:drop-shadow-lg cursor-pointer"
                         >
                             <img
                                 src={logo}
                                 alt={`Client logo ${index + 1}`}
-                                className="h-16 overflow-hidden"
+                                className="h-14"
                                 loading="lazy"
                             />
                         </div>

@@ -9,7 +9,7 @@ const BlogPageHeading = () => {
             <div className="absolute inset-0 bg-black/50 backdrop-blur z-0" />
 
             <div className="relative z-10 max-w-5xl mx-auto text-center">
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <h1 className="text-5xl sm:text-6xl font-serif font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-transparent bg-clip-text drop-shadow-lg">
                         Our Blogs
                     </h1>

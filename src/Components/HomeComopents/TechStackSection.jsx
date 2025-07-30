@@ -73,7 +73,7 @@ const TechStackSection = () => {
 
                     {/* Text content */}
                     <div className="w-full lg:w-[58%]">
-                        <Fade direction="up" triggerOnce>
+                        <Fade direction="up"  >
                             <h2 className="text-4xl sm:text-5xl font-bold text-teal-400 mb-5">
                                 Tech Stack & Skills
                             </h2>
@@ -82,7 +82,7 @@ const TechStackSection = () => {
                             </p>
                         </Fade>
 
-                        <Fade direction="up" delay={200} triggerOnce>
+                        <Fade direction="up" delay={200}  >
                             <h3 className="text-2xl sm:text-3xl font-semibold text-teal-300 mb-3">
                                 Learning Never Stops
                             </h3>

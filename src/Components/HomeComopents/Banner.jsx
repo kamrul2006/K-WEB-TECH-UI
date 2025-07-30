@@ -2,11 +2,12 @@ import { FaReact, FaNodeJs, FaLaptopCode, FaGithub } from "react-icons/fa";
 import { Slide, Fade } from "react-awesome-reveal";
 import Hyperspeed from "../../OtherComponents/Hyperspeed";
 import ClientLogosSection from "./ClientLogosSection";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <section className="relative bg-black text-white overflow-hidden min-h-screen">
-            {/* Hyperspeed Animated Background */}
+        <section className="relative bg-black text-white min-h-screen overflow-hidden">
+            {/* Animated Background */}
             <div className="absolute inset-0 z-0">
                 <Hyperspeed
                     effectOptions={{
@@ -48,49 +49,80 @@ const Banner = () => {
             </div>
 
             {/* Black Overlay */}
-            <div className="absolute inset-0 bg-black/60 z-10" />
+            <div className="absolute inset-0 bg-black/70 z-10" />
 
             {/* Hero Content */}
-            <div className="relative z-20 flex flex-col justify-center items-center text-center  min-h-screen gap-y-6  mx-auto">
-                <Slide direction="down" triggerOnce>
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-teal-400 drop-shadow-xl mt-10">
-                        Welcome to K-WEB TEc
-                    </h1>
-                </Slide>
+            <div className="relative z-20 flex flex-col justify-center items-center min-h-screen w-full px-6 lg:px-12">
+                <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-10 mt-16">
 
-                <Fade cascade damping={0.1} triggerOnce>
-                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto px-10">
-                        Crafting blazing fast, interactive, and responsive web apps with the modern MERN Stack.
-                        We specialize in building real-world full-stack solutions with speed and style.
-                    </p>
+                    {/* Text Block */}
+                    <div className="flex flex-col justify-center gap-y-6 max-w-2xl">
+                        <Slide direction="down"  >
+                            <h1 className="text-4xl sm:text-5xl font-bold max-w-3/4 text-cyan-100 drop-shadow-lg">
+                                Build the Future with <span className="text-teal-400">K-WEB TEc</span>
+                            </h1>
+                        </Slide>
 
-                    {/* Icons */}
-                    <div className="flex justify-center gap-6 text-2xl text-teal-400">
-                        <FaReact title="React.js" />
-                        <FaNodeJs title="Node.js" />
-                        <FaLaptopCode title="Full Stack" />
-                        <FaGithub title="GitHub" />
+                        <Fade cascade damping={0.1}  >
+                            <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                                We design fast, functional & futuristic web apps using the MERN stack. From idea to deployment — we deliver pixel-perfect, real-world solutions.
+                            </p>
+
+                            <div className="flex gap-6 text-2xl text-cyan-400">
+                                <FaReact title="React.js" />
+                                <FaNodeJs title="Node.js" />
+                                <FaLaptopCode title="Full Stack" />
+                                <FaGithub title="GitHub" />
+                            </div>
+
+                            {/* Buttons */}
+                            <div className="flex flex-wrap gap-4 mt-4">
+                                <Link
+                                    to="/projects"
+                                    className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white px-6 py-2 rounded-full font-semibold shadow-md transition duration-300 transform hover:scale-105 hover:shadow-lg"
+                                >
+                                    Explore Projects
+                                </Link>
+                                <Link
+                                    to="/contact"
+                                    className="bg-transparent text-teal-400 border border-teal-500 px-6 py-2 rounded-full font-semibold hover:bg-teal-500 hover:text-white transition duration-300 transform hover:scale-105"
+                                >
+                                    Let's Connect
+                                </Link>
+                            </div>
+                        </Fade>
                     </div>
 
-                    {/* Buttons */}
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <a
-                            href="#projects"
-                            className="bg-teal-500 hover:bg-teal-600 text-white px-5 py-2 rounded-full font-semibold transition duration-300 shadow-lg hover:scale-105 border border-teal-400"
-                        >
-                            View Projects
-                        </a>
-                        <a
-                            href="#contact"
-                            className="text-teal-400 hover:bg-teal-600 hover:text-white border border-teal-500 px-5 py-2 rounded-full font-semibold transition duration-300 shadow-lg hover:scale-105"
-                        >
-                            Contact Me
-                        </a>
-                    </div>
-                </Fade>
+                    {/* Side Cards */}
+                    <div className="flex flex-col gap-6 w-full max-w-sm">
+                        <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-md hover:shadow-lg transition">
+                            <p className="text-lg text-gray-200">
+                                👋 New Here? <br />
+                                <span className="text-2xl font-mono text-teal-400">Looking for jobs?</span>
+                            </p>
+                            <Link to="/about">
+                                <button className="mt-4 px-5 py-2 border border-teal-400 rounded-full text-teal-300 hover:bg-teal-600 hover:text-white transition duration-300">
+                                    Find Jobs
+                                </button>
+                            </Link>
+                        </div>
 
-                {/* Client Logos inside Hero */}
-                <div className="w-full mt-4 lg:mt-20 bg-white/10 backdrop-blur-sm  py-3 overflow-hidden h-fit">
+                        <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-md hover:shadow-lg transition">
+                            <p className="text-lg text-gray-200">
+                                💻 Passionate about coding? <br />
+                                <span className="text-2xl font-mono text-teal-400">Want to learn more?</span>
+                            </p>
+                            <Link to="/blogs">
+                                <button className="mt-4 px-5 py-2 border border-teal-400 rounded-full text-teal-300 hover:bg-teal-600 hover:text-white transition duration-300">
+                                    Learn Coding
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Client Logos */}
+                <div className="w-full mt-10 bg-white/10 backdrop-blur-sm py-4 px-4 rounded-xl shadow-inner overflow-hidden scroll-smooth">
                     <ClientLogosSection />
                 </div>
             </div>

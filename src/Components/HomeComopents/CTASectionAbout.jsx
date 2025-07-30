@@ -6,7 +6,7 @@ const CTASectionAbout = () => {
     return (
         <section className="bg-gradient-to-r from-teal-600 via-cyan-700 to-blue-800 py-16 px-6 sm:px-10 md:px-20 text-white relative overflow-hidden z-10">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-                <Fade direction="left" triggerOnce>
+                <Fade direction="left"  >
                     <div className="text-center md:text-left">
                         <h2 className="text-3xl sm:text-4xl font-bold mb-2">
                             Wants to know more about K-Web-Tech?
@@ -17,7 +17,7 @@ const CTASectionAbout = () => {
                     </div>
                 </Fade>
 
-                <Fade direction="right" triggerOnce>
+                <Fade direction="right"  >
                     <Link
                         to="/about"
                         className="inline-flex items-center gap-2 bg-white text-teal-700 font-semibold text-sm sm:text-base px-6 py-3 rounded-full shadow-lg hover:bg-teal-100 transition duration-300"

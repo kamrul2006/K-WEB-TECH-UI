@@ -9,7 +9,7 @@ const AboutSection = () => {
         >
             <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
                 {/* Left Side – Text Content */}
-                <Fade direction="left" triggerOnce>
+                <Fade direction="left"  >
                     <div className="w-full">
                         <h2 className="text-4xl sm:text-5xl font-extrabold text-teal-400 mb-6 leading-tight">
                             Empowering Future Developers
@@ -44,7 +44,7 @@ const AboutSection = () => {
                 </Fade>
 
                 {/* Right Side – Image or Illustration */}
-                <Fade direction="right" triggerOnce>
+                <Fade direction="right"  >
                     <div className="w-full  lg:mx-10 ">
                         <img
                             src="/images/AboutUs.svg"

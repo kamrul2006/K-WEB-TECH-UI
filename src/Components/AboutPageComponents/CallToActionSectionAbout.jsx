@@ -6,7 +6,7 @@ const CallToActionSection = () => {
     return (
         <section className="relative bg-gradient-to-r from-[#0f2027] via-[#203a43] to-[#2c5364] text-white py-24 px-6 overflow-hidden">
             <div className="max-w-6xl mx-auto flex flex-col items-center text-center z-10 relative">
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 bg-gradient-to-r from-teal-300 via-cyan-300 to-blue-400 text-transparent bg-clip-text drop-shadow-md">
                         Let’s Build Something Great Together
                     </h2>

@@ -9,7 +9,7 @@ const AboutUsHeading = () => {
             <div className="absolute inset-0 bg-black/50 backdrop-blur-xs z-0" />
 
             <div className="relative z-10 max-w-5xl mx-auto text-center">
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <h2 className="text-5xl sm:text-6xl font-extrabold mb-6 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 text-transparent bg-clip-text drop-shadow-lg">
                         About Us
                     </h2>

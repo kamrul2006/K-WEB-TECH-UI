@@ -11,7 +11,7 @@ const ContactUsHeading = () => {
 
             {/* Content */}
             <div className="relative z-10 max-w-5xl mx-auto text-center">
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <h2 className="text-5xl sm:text-6xl font-extrabold mb-6 bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-400 text-transparent bg-clip-text drop-shadow-xl">
                         Contact Us
                     </h2>

@@ -34,7 +34,7 @@ const BlogDetails = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
                 {/* Blog Main Content */}
                 <div className="lg:col-span-8">
-                    <Fade direction="up" triggerOnce>
+                    <Fade direction="up"  >
                         <button
                             onClick={() => navigate("/blogs")}
                             className="my-6 p-2 border border-cyan-500 rounded-full inline-flex items-center gap-2 text-cyan-400 hover:text-white hover:bg-cyan-600/20 transition"
@@ -92,7 +92,7 @@ const BlogDetails = () => {
 
                 {/* Sidebar */}
                 <div className="lg:col-span-4 ">
-                    <Slide direction="right" triggerOnce>
+                    <Slide direction="right"  >
                         <div className=" p-6 rounded-2xl shadow-xl sticky top-20 h-full flex flex-col justify-around">
 
                             <h3 className="text-2xl font-bold text-cyan-400 my-4">Related Posts</h3>

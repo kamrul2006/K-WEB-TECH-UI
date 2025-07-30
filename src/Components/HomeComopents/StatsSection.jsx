@@ -48,7 +48,7 @@ const StatsSection = () => {
             className="py-24 bg-gradient-to-b from-gray-950 via-black to-gray-900 text-white relative z-10"
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <h2 className="text-4xl sm:text-5xl font-extrabold text-teal-400 mb-4">
                         Our Journey So Far
                     </h2>
@@ -60,7 +60,7 @@ const StatsSection = () => {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                     {stats.map((item, index) => (
-                        <Fade key={index} direction="up" delay={index * 100} triggerOnce>
+                        <Fade key={index} direction="up" delay={index * 100}  >
                             <div className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl shadow-md hover:shadow-teal-500/20 p-8 transform hover:scale-[1.03] transition duration-300 flex flex-col items-center justify-center">
                                 <div className="mb-4">{item.icon}</div>
                                 <h3 className="text-4xl font-bold text-white mb-1">{item.value}</h3>

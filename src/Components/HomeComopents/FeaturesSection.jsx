@@ -50,7 +50,7 @@ const FeaturesSection = () => {
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Header */}
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <div className="text-center mb-16">
                         <h2 className="text-4xl sm:text-5xl font-extrabold text-teal-400 mb-4 tracking-tight">
                             Transforming Ideas Into Digital Reality
@@ -64,7 +64,7 @@ const FeaturesSection = () => {
                 {/* Content */}
                 <div className="flex flex-col lg:flex-row gap-12 items-start">
                     {/* Illustration */}
-                    <Fade direction="left" triggerOnce className="w-full lg:w-1/3">
+                    <Fade direction="left" className="w-full lg:w-1/3">
                         <div className="w-full flex justify-center lg:justify-start">
                             <img
                                 src="/images/Features.png"
@@ -77,7 +77,7 @@ const FeaturesSection = () => {
                     {/* Features Grid */}
                     <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((feature, index) => (
-                            <Fade key={index} direction="up" delay={index * 100} triggerOnce>
+                            <Fade key={index} direction="up" delay={index * 100}  >
                                 <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-teal-500/30 hover:scale-[1.02] transition-all duration-300 h-full">
                                     <div className="mb-3">{feature.icon}</div>
                                     <h3 className="text-lg font-bold text-white mb-1">

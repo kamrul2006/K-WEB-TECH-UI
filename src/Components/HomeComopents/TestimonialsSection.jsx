@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
     return (
         <section className="py-20 bg-black text-white">
             <div className="">
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-4 text-teal-400">
                         What Our Clients Say
                     </h2>

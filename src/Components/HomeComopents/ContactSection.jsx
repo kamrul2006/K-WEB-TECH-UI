@@ -7,14 +7,14 @@ const ContactSection = () => {
     return (
         <section id="contact" className="py-20 bg-gray-950 text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <Fade direction="up" triggerOnce>
+                <Fade direction="up"  >
                     <h2 className="text-3xl sm:text-4xl font-bold text-center text-teal-400 mb-3">Get in Touch</h2>
                     <p className="text-center text-gray-400 mb-12">We’d love to hear from you. Send us a message!</p>
                 </Fade>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     {/* Left Side - Illustration */}
-                    <Fade direction="left" triggerOnce>
+                    <Fade direction="left"  >
                         <div className="hidden md:block">
                             <img
                                 src="https://cdni.iconscout.com/illustration/premium/thumb/contact-us-3489588-2912014.png"
@@ -25,7 +25,7 @@ const ContactSection = () => {
                     </Fade>
 
                     {/* Contact Form */}
-                    <Fade direction="right" triggerOnce>
+                    <Fade direction="right"  >
                         <div className="w-full  mx-auto space-y-8">
                             <form className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-lg space-y-6">
                                 <div>
