@@ -1,110 +1,124 @@
 
 # 🚀 K-Web Tech — Creative Digital Web Platform
 
->Welcome to **K-Web Tech**, a sleek and modern frontend web application designed to showcase creative digital solutions. Built with **React**, **Tailwind CSS**, **Framer Motion**, and more, the platform highlights stunning UI/UX, smart animations, blog content, and restricted user access features.
-
-🌐 **Live Site**: [https://k-web-tec.web.app](https://k-web-tec.web.app)
-
 -----
 
-## 📸 Project Preview
+![K-Web Banner](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&size=26\&duration=3000\&pause=1000\&color=36BCF7\&center=true\&vCenter=true\&width=1000\&height=80\&lines=Welcome+to+K-Web+Tech!;A+Creative+Digital+Frontend+Experience;Built+with+React%2C+TailwindCSS+%26+More)
 
-<img src="./public/preview.png" />
+Welcome to K-Web Tech, a sleek and modern frontend web application designed to showcase creative digital solutions. Built with React, Tailwind CSS, Framer Motion, and more, the platform highlights stunning UI/UX, smart animations, blog content, and restricted user access features.
+
+
+
+## 🔗 Live Demo
+👉 [Visit K-Web Tech](https://k-web-tec.web.app)
+
+---
+
+## 🖼️ Project Preview
+
+![Preview](./public/preview.png)
 
 ---
 
 ## ✨ Features
 
-### ✅ General Features
+### 🧰 Core Highlights
 
-- ⚡ Lightning-fast performance with **Vite**
-- 🎨 Stylish, responsive design with **Tailwind CSS**
-- 🌙 Dark theme & gradient-rich UI
-- 🌀 Animated transitions using **Framer Motion**
-- 🧩 Component-based architecture (reusable & modular)
-- 🔒 Secure private routes for logged-in users only
-- 🔁 Auto-scroll banners with **react-fast-marquee**
-- 🧠 Scroll-based effects and modern reveal animations
+* ⚡ Fast & optimized with **Vite**
+* 🎨 Styled using **Tailwind CSS**
+* 🌒 Dark mode with gradient-rich UI
+* 🌀 Page transitions via **Framer Motion**
+* ♻️ Reusable, modular **React components**
+* 🔒 Firebase-based secure route protection
+* 🔁 Marquee banners for brands & projects
+* 👀 Scroll-reveal & animation interactions
 
------
+---
 
-### 📄 Pages Included
+### 📄 Pages Overview
 
-| Page                  | Description |
-|-----------------------|-------------|
-| **Home**              | Hero banner, intro, services, and logos slider |
-| **About Us**          | Creative layout introducing the platform or team |
-| **Projects**          | Showcases featured work with hover effects |
-| **Blog**              | Informative blog cards with category filtering |
-| **Blog Details**      | Full blog with likes, sidebar, and sticky layout |
-| **Login / Register**  | Firebase Auth (email & Google) integration |
-| **Profile**           | User info, role display, email verification info |
-| **Admin Dashboard**   | Role-based dashboard access |
-| **Private Pages**     | Access restricted to logged-in users |
-| **Under Construction**| Creative 404/Coming Soon placeholder |
+| 📌 Page          | 🔍 Description                     |
+| ---------------- | ---------------------------------- |
+| Home             | Hero + sections + logo carousel    |
+| About Us         | Team or platform intro layout      |
+| Projects         | Interactive featured cards         |
+| Blog             | Blog listings with filters         |
+| Blog Details     | Post with sidebar, likes           |
+| Login / Register | Firebase Auth with email & Google  |
+| Profile          | User info & verification           |
+| Admin Dashboard  | Role-based admin routes            |
+| Private Routes   | Accessible only to logged-in users |
+| 404/Coming Soon  | Creative placeholder design        |
 
------
+---
 
 ## 🔐 Authentication
 
-- 🔑 Firebase Authentication (Email/Password + Google)
-- 🔄 Auth state is globally managed via context
-- 🧭 Conditional rendering for login-only routes
+* ✅ Email/password login
+* 🌐 Google sign-in (OAuth)
+* 🎯 Global auth context
+* 🧾 Conditional rendering for protected content
+* 📩 Email verification support
 
------
+---
 
-## 🛠 Technologies Used
+## 🛠️ Built With
 
-| Tech                | Description |
-|---------------------|-------------|
-| **React.js**        | UI Library |
-| **Tailwind CSS**    | Utility-first CSS |
-| **Framer Motion**   | Smooth animations |
-| **React Icons**     | Icon components |
-| **React Router DOM**| Client-side routing |
-| **Firebase**        | Hosting + Auth |
-| **SweetAlert2**     | Alert modals |
-| **React Awesome Reveal** | Scroll reveal animations |
-| **React Fast Marquee** | Infinite auto-scroll logos |
+| 🔧 Tool / Tech       | 🧩 Purpose            |
+| -------------------- | --------------------- |
+| React.js             | Frontend UI           |
+| Tailwind CSS         | Styling               |
+| Framer Motion        | Animations            |
+| React Router DOM     | Client routing        |
+| Firebase             | Auth & hosting        |
+| React Icons          | SVG icons             |
+| SweetAlert2          | Modal alerts          |
+| React Awesome Reveal | Scroll reveal effects |
+| React Fast Marquee   | Smooth auto scroll    |
 
------
+---
 
-## 📦 Folder Structure
+## 📂 Project Structure
+
+<details>
+<summary>Click to view folder tree</summary>
 
 ```
-
 src/
 │
-├── components/       # Shared components (Navbar, Loader, Cards)
-├── pages/            # Page-level components (Home, Blog, Projects, etc.)
-├── routes/           # Protected routes
-├── hooks/            # Custom hooks (useAuth, etc.)
-├── assets/           # Static images and logos
-├── CSS/              # Custom stylesheets
-├── App.jsx           # Main app component
-├── main.jsx          # App entry point
-└── firebase.config.js# Firebase setup
+├── components/       # Navbar, Cards, Loader, etc.
+├── pages/            # Page-specific React components
+├── routes/           # Route protection & private logic
+├── hooks/            # Custom React hooks
+├── assets/           # Static assets (images, SVGs)
+├── CSS/              # Optional custom stylesheets
+├── App.jsx           # App shell and layout
+├── main.jsx          # Root app renderer
+└── firebase.config.js# Firebase setup file
+```
 
-````
+</details>
 
-------
+---
 
-## 🚀 Getting Started
+## 🧪 Quick Start
+
+### 🔧 Local Development
 
 ```bash
 git clone https://github.com/kamrul2006/K-WEB-TECH-UI.git
 cd k-web-tech
 npm install
 npm run dev
-````
+```
 
------
+---
 
-## 🚚 Deployment
+## 🚀 Deployment Guide
 
-This project is deployed using **Firebase Hosting**.
+This project uses **Firebase Hosting**.
 
-To deploy:
+### 🔄 Deploy Commands
 
 ```bash
 npm run build
@@ -113,35 +127,58 @@ firebase init
 firebase deploy
 ```
 
------
+> Ensure you’ve installed Firebase CLI:
 
-## 🙋‍♂️ Author
+```bash
+npm install -g firebase-tools
+```
+
+---
+
+## 👤 Author
 
 **Kamrul Islam Apurba**
+Frontend Developer
 
-- Frontend Developer
-- [GitHub](https://github.com/kamrul2006) | <kamrulislamapurba@gmail.com>
+* 🌐 [GitHub](https://github.com/kamrul2006)
+* 📧 [kamrulislamapurba@gmail.com](mailto:kamrulislamapurba@gmail.com)
 
------
+---
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
 
------
+---
 
->Feel free to:
+## 🤝 Contributing
 
-🔧 Fork the project
+Contributions are welcome!
 
-🛠 Submit pull requests
+* 🪄 Fork the repo
+* 🛠 Create a new branch
+* ✅ Submit a pull request
 
-🐛 Report issues
+> Found a bug or have a suggestion? [Open an issue](https://github.com/kamrul2006/K-WEB-TECH-UI/issues)
 
-✨ Request features
+---
 
-Your feedback and collaboration are always welcome!🥰
+<p align="center">
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://img.shields.io/github/stars/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=0ea5e9" /></a>
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://img.shields.io/github/forks/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=f59e0b" /></a>
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=10b981" /></a>
+</p>
 
-----
+<p align="center">
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kamrul2006&layout=compact&theme=radical&hide=html" alt="Languages used" /></a>
+</p>
 
-<p align="center"> <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://img.shields.io/github/stars/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=0ea5e9" /></a> <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://img.shields.io/github/forks/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=f59e0b" /></a> <a href="https://github.com/kamrul2006/K-WEB-TECH-UI/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=10b981" /></a> </p> <p align="center"> <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kamrul2006&layout=compact&theme=radical&hide=html" alt="Languages used" /></a> </p>
+## 📣 Acknowledgements
+
+* 🔥 [Vite](https://vitejs.dev)
+* ✨ [Framer Motion](https://www.framer.com/motion/)
+* 🎨 [Tailwind CSS](https://tailwindcss.com)
+* ☁️ [Firebase](https://firebase.google.com/)
+
+---
+
