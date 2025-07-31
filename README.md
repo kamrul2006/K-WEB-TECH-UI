@@ -1,14 +1,15 @@
 
 # 🚀 K-Web Tech — Creative Digital Web Platform
 
-Welcome to K-Web Tech, a sleek and modern frontend web application designed to showcase creative digital solutions. Built with React, Tailwind CSS, Framer Motion, and more, the platform highlights stunning UI/UX, smart animations, blog content, and restricted user access features.
+-----
 
 ![K-Web Banner](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&size=26\&duration=3000\&pause=1000\&color=36BCF7\&center=true\&vCenter=true\&width=1000\&height=80\&lines=Welcome+to+K-Web+Tech!;A+Creative+Digital+Frontend+Experience;Built+with+React%2C+TailwindCSS+%26+More)
 
----
+Welcome to K-Web Tech, a sleek and modern frontend web application designed to showcase creative digital solutions. Built with React, Tailwind CSS, Framer Motion, and more, the platform highlights stunning UI/UX, smart animations, blog content, and restricted user access features.
+
+
 
 ## 🔗 Live Demo
-
 👉 [Visit K-Web Tech](https://k-web-tec.web.app)
 
 ---
