@@ -3,7 +3,7 @@
 
 Welcome to K-Web Tech, a sleek and modern frontend web application designed to showcase creative digital solutions. Built with React, Tailwind CSS, Framer Motion, and more, the platform highlights stunning UI/UX, smart animations, blog content, and restricted user access features.
 
-> A beautifully animated, responsive, and secure **React-based** frontend application, built to deliver creativity, interactivity, and smooth user experience.
+![K-Web Banner](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&size=26\&duration=3000\&pause=1000\&color=36BCF7\&center=true\&vCenter=true\&width=1000\&height=80\&lines=Welcome+to+K-Web+Tech!;A+Creative+Digital+Frontend+Experience;Built+with+React%2C+TailwindCSS+%26+More)
 
 ---
 
@@ -105,7 +105,7 @@ src/
 ### 🔧 Local Development
 
 ```bash
-git clone https://github.com/kamrul2006/k-web-tech.git
+git clone https://github.com/kamrul2006/K-WEB-TECH-UI.git
 cd k-web-tech
 npm install
 npm run dev
@@ -158,20 +158,18 @@ Contributions are welcome!
 * 🛠 Create a new branch
 * ✅ Submit a pull request
 
-> Found a bug or have a suggestion? [Open an issue](https://github.com/kamrul2006/k-web-tech/issues)
+> Found a bug or have a suggestion? [Open an issue](https://github.com/kamrul2006/K-WEB-TECH-UI/issues)
 
 ---
 
-![K-Web Banner](https://readme-typing-svg.herokuapp.com?font=Fira+Code\&size=26\&duration=3000\&pause=1000\&color=36BCF7\&center=true\&vCenter=true\&width=1000\&height=80\&lines=Welcome+to+K-Web+Tech!;A+Creative+Digital+Frontend+Experience;Built+with+React%2C+TailwindCSS+%26+More)
-
 <p align="center">
-  <a href="https://github.com/kamrul2006/k-web-tech"><img src="https://img.shields.io/github/stars/kamrul2006/k-web-tech?style=for-the-badge&color=0ea5e9" /></a>
-  <a href="https://github.com/kamrul2006/k-web-tech"><img src="https://img.shields.io/github/forks/kamrul2006/k-web-tech?style=for-the-badge&color=f59e0b" /></a>
-  <a href="https://github.com/kamrul2006/k-web-tech/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kamrul2006/k-web-tech?style=for-the-badge&color=10b981" /></a>
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://img.shields.io/github/stars/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=0ea5e9" /></a>
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://img.shields.io/github/forks/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=f59e0b" /></a>
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kamrul2006/K-WEB-TECH-UI?style=for-the-badge&color=10b981" /></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/kamrul2006/k-web-tech"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kamrul2006&layout=compact&theme=radical&hide=html" alt="Languages used" /></a>
+  <a href="https://github.com/kamrul2006/K-WEB-TECH-UI"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kamrul2006&layout=compact&theme=radical&hide=html" alt="Languages used" /></a>
 </p>
 
 ## 📣 Acknowledgements
