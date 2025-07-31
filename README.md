@@ -5,11 +5,11 @@ Welcome to **K-Web Tech**, a sleek and modern frontend web application designed 
 
 🌐 **Live Site**: [https://k-web-tec.web.app](https://k-web-tec.web.app)
 
----
+-----
 
 ## 📸 Project Preview
 
-<img src="./public/FAV.png" />
+<img src="./public/preview.png" />
 ---
 
 ## ✨ Features
@@ -25,7 +25,7 @@ Welcome to **K-Web Tech**, a sleek and modern frontend web application designed 
 - 🔁 Auto-scroll banners with **react-fast-marquee**
 - 🧠 Scroll-based effects and modern reveal animations
 
----
+-----
 
 ### 📄 Pages Included
 
@@ -42,7 +42,7 @@ Welcome to **K-Web Tech**, a sleek and modern frontend web application designed 
 | **Private Pages**     | Access restricted to logged-in users |
 | **Under Construction**| Creative 404/Coming Soon placeholder |
 
----
+-----
 
 ## 🔐 Authentication
 
@@ -50,7 +50,7 @@ Welcome to **K-Web Tech**, a sleek and modern frontend web application designed 
 - 🔄 Auth state is globally managed via context
 - 🧭 Conditional rendering for login-only routes
 
----
+-----
 
 ## 🛠 Technologies Used
 
@@ -66,7 +66,7 @@ Welcome to **K-Web Tech**, a sleek and modern frontend web application designed 
 | **React Awesome Reveal** | Scroll reveal animations |
 | **React Fast Marquee** | Infinite auto-scroll logos |
 
----
+-----
 
 ## 📦 Folder Structure
 
@@ -86,7 +86,7 @@ src/
 
 ````
 
----
+------
 
 ## 🚀 Getting Started
 
@@ -97,7 +97,7 @@ npm install
 npm run dev
 ````
 
----
+-----
 
 ## 🚚 Deployment
 
@@ -112,19 +112,20 @@ firebase init
 firebase deploy
 ```
 
----
+-----
 
 ## 🙋‍♂️ Author
 
 **Kamrul Islam Apurba**
-Frontend Developer | [GitHub](https://github.com/kamrul2006)
 
----
+- Frontend Developer | [GitHub](https://github.com/kamrul2006) | <kamrulislamapurba@gmail.com>
+
+-----
 
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
 
----
+-----
 
 > Feel free to fork, contribute, or raise issues. Feedback is always welcome!
