@@ -95,29 +95,35 @@ const Banner = () => {
 
                     {/* Side Cards */}
                     <div className="flex flex-col gap-6 w-full max-w-sm">
-                        <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-md hover:shadow-lg transition">
-                            <p className="text-lg text-gray-200">
-                                👋 New Here? <br />
-                                <span className="text-2xl font-mono text-teal-400">Looking for jobs?</span>
-                            </p>
-                            <Link to="/about">
-                                <button className="mt-4 px-5 py-2 border border-teal-400 rounded-full text-teal-300 hover:bg-teal-600 hover:text-white transition duration-300">
-                                    Find Jobs
-                                </button>
-                            </Link>
-                        </div>
+                        <Fade duration={2000}>
 
-                        <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-md hover:shadow-lg transition">
-                            <p className="text-lg text-gray-200">
-                                💻 Passionate about coding? <br />
-                                <span className="text-2xl font-mono text-teal-400">Want to learn more?</span>
-                            </p>
-                            <Link to="/blogs">
-                                <button className="mt-4 px-5 py-2 border border-teal-400 rounded-full text-teal-300 hover:bg-teal-600 hover:text-white transition duration-300">
-                                    Learn Coding
-                                </button>
-                            </Link>
-                        </div>
+                            <div className="bg-white/5 hover:scale-105 duration-500 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-md hover:shadow-lg transition">
+
+                                <p className=" text-gray-200">
+                                    👋 New Here? <br />
+                                    <span className="text-xl font-mono text-teal-400">Looking for jobs?</span>
+                                </p>
+
+                                <Link to="/a">
+                                    <button className="mt-2 px-5 border border-teal-400 rounded-full text-teal-300 hover:bg-teal-600 hover:text-white transition duration-300">
+                                        Find Jobs
+                                    </button>
+                                </Link>
+
+                                <hr className="my-4" />
+
+                                <p className=" text-gray-200 text-right">
+                                    💻 Passionate about coding? <br />
+                                    <span className="text-xl font-mono text-teal-400">Want to learn more?</span>
+                                </p>
+                                <Link to="/a" className="flex items-end justify-end">
+                                    <button className="mt-2 px-5 text-right border border-teal-400 rounded-full text-teal-300 hover:bg-teal-600 hover:text-white transition duration-300">
+                                        Learn Coding
+                                    </button>
+                                </Link>
+                            </div>
+
+                        </Fade>
                     </div>
                 </div>
 

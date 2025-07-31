@@ -11,6 +11,11 @@ import AuthProvider from "./Auth/Providers/AuthProvider";
 import SignupPage from "./Auth/Users/SignupPage";
 import BlogPageLayouts from "./Layouts/BlogPageLayouts";
 import BlogDetails from "./Components/BlogPageComponents/BlogDetails";
+import UnderConstruction from "./OtherComponents/UnderConstruction";
+import LoginRequired from "./OtherComponents/LoginRequired";
+import PrivetRout from "./Auth/Privet/Privetrought";
+import CustomLoader from "./OtherComponents/CustomLoader";
+import AllProjectsPage from "./Layouts/ProjectsPageLayouts";
 
 
 const root = document.getElementById("root");
@@ -22,6 +27,8 @@ ReactDOM.createRoot(root).render(
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<SignupPage />} />
+        <Route path="/a" element={<UnderConstruction />} />
+        <Route path="/b" element={< LoginRequired />} />
 
 
         <Route element={<MainLayOuts />}>
@@ -32,9 +39,29 @@ ReactDOM.createRoot(root).render(
 
           <Route path="/contact" element={<ContactPageLayouts />} />
 
-          <Route path="/blogs" element={<BlogPageLayouts />} />
+          <Route path="/blogs"
+            element={
+              <PrivetRout>
+                <BlogPageLayouts />
+              </PrivetRout>}
+          />
 
-          <Route path="/blogs/:id" element={<BlogDetails />} />
+          <Route path="/blogs/:id"
+            element={
+              <PrivetRout>
+                <BlogDetails />
+              </PrivetRout>}
+          />
+
+          <Route path="/projects"
+            element={
+              <PrivetRout>
+                <AllProjectsPage />
+              </PrivetRout>}
+          />
+
+          <Route path="/team" element={<CustomLoader />} />
+
 
         </Route>
       </Routes>

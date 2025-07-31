@@ -1,18 +1,17 @@
 import { Navigate, useLocation } from "react-router-dom";
-import KInfonicLoader from "../../Components/Fixed/KInfonicLoader";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import CustomLoader from "../../OtherComponents/CustomLoader";
 
 const PrivetRout = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
 
     const location = useLocation()
-    // console.info(location)
 
 
     if (loading) {
         return (<div>
-            <KInfonicLoader />
+            <CustomLoader />
         </div>)
     }
 
@@ -21,7 +20,7 @@ const PrivetRout = ({ children }) => {
     }
 
     return (
-        <Navigate state={location.pathname} to={'/login'}></Navigate>
+        <Navigate state={location.pathname} to={'/b'}></Navigate>
     );
 };
 
